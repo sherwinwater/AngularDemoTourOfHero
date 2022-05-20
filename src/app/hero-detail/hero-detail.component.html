@@ -3,8 +3,13 @@
   <div><span>id: </span>{{hero.id}}</div>
   <div>
     <label>name:
-      <input [(ngModel)]="hero.name" placeholder="name"/>
+      <input [(ngModel)]="hero.name" placeholder="name" />
     </label>
+    <p>foods:</p>
+    <app-hero-food *ngFor="let name of names" [name]="name">
+      <p>ng-content</p>
+      <p question>question</p>
+    </app-hero-food>
   </div>
   <button (click)="goBack()">go back</button>
   <button (click)="save()">save</button>
